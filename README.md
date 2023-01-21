@@ -1,7 +1,7 @@
 # Actor Model in Cardano
 
 
-Implementing https://github.com/mlabs-haskell/plutus-specification-language/blob/master/Actor-Model-Cardano.md
+Implementing [plutus-specification-language/Actor-Model-Cardano](https://github.com/mlabs-haskell/plutus-specification-language/blob/d580308922802c668b46d9afab1c808d9c9191c9/Actor-Model-Cardano.md)
 
 <!-- We provide library functions for the actions `Terminate, Send, Receive, Take` which can be used to implement an actor instance through parameterization. Later we intend to show a version without parameterization (using actor factories.) -->
 
@@ -17,13 +17,12 @@ Messages are also UTXO at the policy address, have no required asset, and have a
 
 todo:
 
-Fix non-compile
-Allow spend messages (message dependent on receiving script being invoked)
-Composable send/receive/take functions.
-Flesh out dex example (liquidity pool)
-Cabalify the top level of this repo, bring in plutip, add app dir, and add some basic tests.
-Plutarch implementation
-
+- Fix non-compile
+- Allow spend messages (message dependent on receiving script being invoked)
+- Composable send/receive/take functions.
+- Flesh out dex example (liquidity pool)
+- Cabalify the top level of this repo, bring in plutip, add app dir, and add some basic tests.
+- Plutarch implementation
 
 For send/receive/take I am thinking of a ScriptContext-like structure where you have a list of TxIn & TxOut, and an accumulating 'Value'.
 [TxIn],[TxOut] are copied from scriptcontext, receive removes from TxIn, send removes from TxOut,
