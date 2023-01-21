@@ -1,0 +1,14 @@
+name = '_/actor_model'
+version = '0.0.0'
+license = 'Apache-2.0'
+description = "Aiken contracts for project '_/actor_model'"
+
+[repository]
+user = '_'
+project = 'actor_model'
+platform = 'github'
+
+[[dependencies]]
+name = 'aiken-lang/stdlib'
+version = 'main'
+source = 'github'
