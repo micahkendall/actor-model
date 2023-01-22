@@ -48,6 +48,7 @@ fn unsafe_where(self: List<a>, p: fn(a) -> Bool) -> a {
       } else {
         unsafe_where(xs, p)
       }
+    _->error()
   }
 }
 
@@ -55,6 +56,7 @@ fn unsafe_any(self: List<a>, p: fn(a) -> Bool) -> Bool {
   when self is {
     [] -> error()
     [x, ..xs] -> p(x) || unsafe_any(xs, p)
+    _->error()
   }
 }
 
@@ -75,10 +77,11 @@ fn terminate(a: (ByteArray, ByteArray), s: ScriptContext) -> Bool {
               })
             }
           }
+          _->error()
         }
       })
     }
-    _->False
+    _->error()
   }
 }
 
